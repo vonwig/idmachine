@@ -2,8 +2,8 @@ FROM gcr.io/personalsdm-216019/nodejs-base:14-3.14@sha256:32b250f8564e7a59cfa636
 
 COPY package.json package-lock.json ./
 
-RUN  apk add --no-cache \
- npm=7.17.0-r0 \
+RUN  apk add --no-cache --update \
+ nodejs npm \
  && npm ci --no-optional \
  && npm cache clean --force
  
